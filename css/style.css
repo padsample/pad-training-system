@@ -722,14 +722,22 @@ td{
 
 }
 
-.download-button:disabled{
+.download-button.disabled{
 
     background:#cccccc;
 
-    cursor:not-allowed;
-
     color:#666666;
 
+    cursor:not-allowed;
+
+    pointer-events:none;
+
     transform:none;
+
+}
+
+.download-button.disabled:hover{
+
+    background:#cccccc;
 
 }
