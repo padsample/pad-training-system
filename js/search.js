@@ -44,14 +44,14 @@ const documentData = {
         },
         
         {
-    companyCode: "100001",
-    companyName: "AAA株式会社",
-    documentNo: "DOC004",
-    documentName: "決算報告書",
-    status: "公開",
-    publishDate: "2026/07/25",
-    pdf: "sample.pdf"
-}
+		    companyCode: "100001",
+		    companyName: "AAA株式会社",
+		    documentNo: "DOC004",
+		    documentName: "決算報告書",
+		    status: "公開",
+		    publishDate: "2026/07/25",
+		    pdf: "sample.pdf"
+		}
 
     ],
 
@@ -206,7 +206,7 @@ function createTable(result) {
     "<td>" + row.documentName + "</td>" +
     "<td>" + createStatusBadge(row.status) + "</td>" +
     "<td>" + row.publishDate + "</td>" +
-    "<td>" + createPdfButton(row.pdf, index + 1) + "</td>";
+    "<td>" + createPdfButton(row.pdf) + "</td>";
 
         tbodyResult.appendChild(tr);
 
@@ -234,24 +234,33 @@ function createStatusBadge(status) {
 // PDFボタン生成
 //======================================================
 
-function createPdfButton(pdf, rowNo) {
+function createPdfButton(pdf) {
 
-    if (!pdf) {
+    // 公開
+    if (pdf) {
 
-        return "-";
-
-    }
-
-    return `
+        return `
 <a
     href="pdf/${pdf}"
     class="download-button"
-    data-row="${rowNo}"
     target="_blank">
 
     📄 ダウンロード
 
 </a>
+`;
+
+    }
+
+    // 非公開
+    return `
+<button
+    class="download-button"
+    disabled>
+
+    📄 ダウンロード
+
+</button>
 `;
 
 }
