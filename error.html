@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ログインエラー | 企業情報管理システム</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="login-page">
+
+        <section class="login-card error-card">
+
+            <div class="error-icon">
+                ⚠️
+            </div>
+
+            <h1 class="error-title">
+                ログインに失敗しました
+            </h1>
+
+            <p id="lblErrorMessage" class="error-message">
+
+                ログインIDまたはパスワードが入力されていません。<br>
+                入力内容を確認して、もう一度ログインしてください。
+
+            </p>
+
+            <button
+                id="btnBack"
+                class="login-button"
+                onclick="location.href='login.html'">
+
+                ログイン画面へ戻る
+
+            </button>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

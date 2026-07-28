@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>企業情報管理システム | ログイン</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <div class="logo-area">
+
+                <div class="logo-circle">
+                    🏢
+                </div>
+
+                <h1>企業情報管理システム</h1>
+
+                <p class="sub-title">
+                    Corporate Information Management System
+                </p>
+
+            </div>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="txtLoginId">
+                        ログインID
+                    </label>
+
+                    <div class="input-area">
+
+                        <span class="icon">
+                            👤
+                        </span>
+
+                        <input
+                            id="txtLoginId"
+                            type="text"
+                            autocomplete="off"
+                            placeholder="ログインIDを入力してください">
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="txtPassword">
+                        パスワード
+                    </label>
+
+                    <div class="input-area">
+
+                        <span class="icon">
+                            🔒
+                        </span>
+
+                        <input
+                            id="txtPassword"
+                            type="password"
+                            placeholder="パスワードを入力してください">
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="btnLogin"
+                    class="login-button"
+                    type="submit">
+
+                    ログイン
+
+                </button>
+
+            </form>
+
+            <div class="system-info">
+
+                <div>
+                    Version 1.0
+                </div>
+
+                <div>
+                    PAD Training Environment
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

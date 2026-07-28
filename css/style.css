@@ -1,0 +1,504 @@
+/* ======================================================
+   企業情報管理システム
+   style.css
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI","Yu Gothic UI",sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(135deg,#0f4c81 0%,#165c96 40%,#2c82c9 100%);
+
+    overflow:hidden;
+}
+
+
+/* 背景装飾 */
+
+.background{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.18),transparent 25%),
+        radial-gradient(circle at 80% 30%,rgba(255,255,255,.12),transparent 20%),
+        radial-gradient(circle at 60% 85%,rgba(255,255,255,.15),transparent 30%);
+
+    z-index:-1;
+}
+
+
+
+/* ===========================
+        ログインカード
+=========================== */
+
+.login-card{
+
+    width:430px;
+
+    padding:45px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.25);
+
+    animation:fadeIn .6s ease;
+}
+
+
+
+/* ===========================
+          ロゴ
+=========================== */
+
+.logo-area{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+
+.logo-circle{
+
+    width:78px;
+    height:78px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:34px;
+
+    background:#0f4c81;
+
+    color:white;
+
+    box-shadow:0 8px 20px rgba(15,76,129,.35);
+
+    margin-bottom:18px;
+}
+
+
+.logo-area h1{
+
+    font-size:28px;
+
+    color:#153b63;
+
+    margin-bottom:6px;
+
+    font-weight:700;
+}
+
+
+.sub-title{
+
+    color:#6f7b87;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+}
+
+
+
+/* ===========================
+      入力エリア
+=========================== */
+
+.input-group{
+
+    margin-bottom:26px;
+}
+
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#3f4c5a;
+
+    font-weight:600;
+}
+
+
+.input-area{
+
+    display:flex;
+    align-items:center;
+
+    border:1px solid #d8dee5;
+
+    border-radius:10px;
+
+    background:white;
+
+    transition:.25s;
+}
+
+
+.input-area:hover{
+
+    border-color:#4f93d2;
+}
+
+
+.input-area:focus-within{
+
+    border-color:#0f72c8;
+
+    box-shadow:
+        0 0 0 4px rgba(15,114,200,.18);
+}
+
+
+.icon{
+
+    width:50px;
+
+    text-align:center;
+
+    font-size:18px;
+}
+
+
+.input-area input{
+
+    flex:1;
+
+    height:50px;
+
+    border:none;
+
+    outline:none;
+
+    font-size:15px;
+
+    padding-right:15px;
+
+    background:transparent;
+}
+
+
+
+/* ===========================
+        ボタン
+=========================== */
+
+.login-button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0f72c8;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+
+.login-button:hover{
+
+    background:#095ea7;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+
+
+.login-button:active{
+
+    transform:scale(.98);
+}
+
+
+
+/* ===========================
+      システム情報
+=========================== */
+
+.system-info{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#8793a1;
+
+    font-size:13px;
+
+    line-height:22px;
+}
+
+
+
+/* ===========================
+      アニメーション
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+   エラー画面
+=================================== */
+
+.error-card{
+
+    text-align:center;
+
+}
+
+.error-icon{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.error-title{
+
+    color:#c62828;
+
+    margin-bottom:18px;
+
+    font-size:28px;
+
+}
+
+.error-message{
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+    font-size:15px;
+
+}
+
+/*==========================
+      Header
+==========================*/
+
+.top-header{
+
+    height:70px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+
+}
+
+.header-title{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#153b63;
+
+}
+
+.header-user{
+
+    color:#666;
+
+}
+
+
+
+/*==========================
+      Search
+==========================*/
+
+.search-page{
+
+    width:1100px;
+
+    margin:40px auto;
+
+}
+
+
+.search-card,
+.result-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    margin-bottom:30px;
+
+}
+
+
+.search-description{
+
+    margin:10px 0 30px;
+
+    color:#666;
+
+}
+
+
+.search-area{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:20px;
+
+}
+
+
+.search-area label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+
+.search-area input{
+
+    width:260px;
+
+    height:46px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+}
+
+
+.search-area button{
+
+    height:46px;
+
+    width:120px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#0f72c8;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+
+th{
+
+    background:#0f72c8;
+
+    color:white;
+
+}
+
+
+th,
+td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+    text-align:center;
+
+}
