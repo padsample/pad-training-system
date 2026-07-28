@@ -14,16 +14,12 @@ body{
 
     min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     background:
         linear-gradient(135deg,#0f4c81 0%,#165c96 40%,#2c82c9 100%);
 
-    overflow:hidden;
-}
+    margin:0;
 
+}
 
 /* 背景装飾 */
 
@@ -343,9 +339,9 @@ body{
 
 .top-header{
 
-    height:70px;
+    width:100%;
 
-    background:white;
+    height:70px;
 
     display:flex;
 
@@ -355,7 +351,9 @@ body{
 
     padding:0 40px;
 
-    box-shadow:0 3px 15px rgba(0,0,0,.1);
+    background:white;
+
+    box-sizing:border-box;
 
 }
 
@@ -503,38 +501,223 @@ td{
 
 }
 
-/*==========================
-      同意チェック
-==========================*/
+/*======================================================
+    検索結果ヘッダー
+======================================================*/
 
-.agreement-area{
-
-    margin-bottom:24px;
-
-}
-
-.agreement-label{
+.result-header{
 
     display:flex;
 
+    justify-content:space-between;
+
     align-items:center;
 
-    gap:10px;
-
-    cursor:pointer;
-
-    color:#555;
-
-    font-size:14px;
+    margin-bottom:20px;
 
 }
 
-.agreement-label input{
+.result-count{
 
-    width:18px;
+    color:#666;
 
-    height:18px;
+    font-size:14px;
 
-    cursor:pointer;
+    font-weight:bold;
+
+}
+
+
+/*======================================================
+    メッセージ
+======================================================*/
+
+.message-area{
+
+    margin-bottom:15px;
+
+    color:#d32f2f;
+
+    font-weight:bold;
+
+}
+
+
+/*======================================================
+    ローディング
+======================================================*/
+
+.loading-area{
+
+    margin-bottom:15px;
+
+    color:#0f72c8;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+}
+
+
+/*======================================================
+    テーブル
+======================================================*/
+
+#tblResult{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:10px;
+
+}
+
+#tblResult th{
+
+    background:#0f72c8;
+
+    color:white;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+#tblResult td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border:1px solid #dddddd;
+
+}
+
+#tblResult tbody tr:hover{
+
+    background:#f4f9ff;
+
+}
+
+
+/*======================================================
+    公開状態
+======================================================*/
+
+.status-public{
+
+    display:inline-block;
+
+    padding:4px 10px;
+
+    background:#d4edda;
+
+    color:#155724;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.status-private{
+
+    display:inline-block;
+
+    padding:4px 10px;
+
+    background:#f8d7da;
+
+    color:#721c24;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+/*======================================================
+    ダウンロードボタン
+======================================================*/
+
+.download-button{
+
+    display:inline-block;
+
+    padding:7px 14px;
+
+    background:#0f72c8;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:6px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+.download-button:hover{
+
+    background:#095ea7;
+
+    transform:translateY(-1px);
+
+}
+
+
+/*======================================================
+    検索ボタン
+======================================================*/
+
+#btnSearch:hover{
+
+    background:#095ea7;
+
+}
+
+#btnSearch:active{
+
+    transform:scale(.98);
+
+}
+
+
+/*======================================================
+    入力欄
+======================================================*/
+
+#txtCompanyCode:focus{
+
+    border-color:#0f72c8;
+
+    outline:none;
+
+    box-shadow:0 0 0 3px rgba(15,114,200,.15);
+
+}
+
+.login-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
 }
