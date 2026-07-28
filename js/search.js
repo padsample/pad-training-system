@@ -254,13 +254,13 @@ function createPdfButton(pdf) {
 
     // 非公開
     return `
-<button
-    class="download-button"
-    disabled>
+<a
+    href="#"
+    class="download-button disabled">
 
     📄 ダウンロード
 
-</button>
+</a>
 `;
 
 }
