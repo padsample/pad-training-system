@@ -4,11 +4,13 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>企業検索 | 企業情報管理システム</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="css/style.css">
 
 </head>
 
@@ -32,7 +34,6 @@
 
 </header>
 
-
 <main class="search-page">
 
     <section class="search-card">
@@ -45,22 +46,28 @@
 
         <p class="search-description">
 
-            企業コードを入力し、検索ボタンを押してください。
+            企業コードを入力し、
+            検索ボタンを押してください。
 
         </p>
 
         <div class="search-area">
 
-            <label for="txtCompanyCode">
+            <div>
 
-                企業コード
+                <label for="txtCompanyCode">
 
-            </label>
+                    企業コード
 
-            <input
-                type="text"
-                id="txtCompanyCode"
-                placeholder="例：100001">
+                </label>
+
+                <input
+                    type="text"
+                    id="txtCompanyCode"
+                    placeholder="例：100004"
+                    maxlength="6">
+
+            </div>
 
             <button
                 id="btnSearch">
@@ -73,43 +80,61 @@
 
     </section>
 
-
-
     <section class="result-card">
 
-        <h2>
+        <div class="result-header">
 
-            検索結果
+            <h2>
 
-        </h2>
+                検索結果
+
+            </h2>
+
+            <div
+                id="lblResultCount"
+                class="result-count">
+
+                検索してください。
+
+            </div>
+
+        </div>
+
+        <div
+            id="divLoading"
+            class="loading-area"
+            style="display:none;">
+
+            検索中...
+
+        </div>
+
+        <div
+            id="divMessage"
+            class="message-area">
+
+        </div>
 
         <table id="tblResult">
 
             <thead>
 
-            <tr>
+                <tr>
 
-                <th>企業コード</th>
-                <th>企業名</th>
-                <th>公開状態</th>
-                <th>公開日</th>
-                <th>PDF</th>
+                    <th>企業コード</th>
+                    <th>企業名</th>
+                    <th>文書番号</th>
+                    <th>文書名</th>
+                    <th>公開状態</th>
+                    <th>公開日</th>
+                    <th>PDF</th>
 
-            </tr>
+                </tr>
 
             </thead>
 
-            <tbody>
-
-            <tr>
-
-                <td colspan="5">
-
-                    検索してください。
-
-                </td>
-
-            </tr>
+            <tbody id="tbodyResult">
+                   
 
             </tbody>
 
@@ -118,6 +143,8 @@
     </section>
 
 </main>
+
+<script src="js/search.js"></script>
 
 </body>
 
