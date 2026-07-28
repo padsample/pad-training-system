@@ -183,10 +183,11 @@ function createTable(result) {
 
     tbodyResult.innerHTML = "";
 
-    result.forEach(function (row) {
+    result.forEach(function (row, index) {
 
         const tr =
             document.createElement("tr");
+            tr.setAttribute("data-row", index + 1);
 
         tr.innerHTML =
     "<td>" + row.companyCode + "</td>" +
@@ -195,7 +196,7 @@ function createTable(result) {
     "<td>" + row.documentName + "</td>" +
     "<td>" + createStatusBadge(row.status) + "</td>" +
     "<td>" + row.publishDate + "</td>" +
-    "<td>" + createPdfButton(row.pdf) + "</td>";
+    "<td>" + createPdfButton(row.pdf, index + 1) + "</td>";
 
         tbodyResult.appendChild(tr);
 
@@ -223,7 +224,7 @@ function createStatusBadge(status) {
 // PDFボタン生成
 //======================================================
 
-function createPdfButton(pdf) {
+function createPdfButton(pdf, rowNo) {
 
     if (!pdf) {
 
@@ -232,15 +233,16 @@ function createPdfButton(pdf) {
     }
 
     return `
-        <a
-            href="pdf/${pdf}"
-            class="download-button"
-            target="_blank">
+<a
+    href="pdf/${pdf}"
+    class="download-button"
+    data-row="${rowNo}"
+    target="_blank">
 
-            📄 ダウンロード
+    📄 ダウンロード
 
-        </a>
-    `;
+</a>
+`;
 
 }
 
