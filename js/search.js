@@ -41,7 +41,7 @@ const documentData = {
             status: "非公開",
             publishDate: "2026/06/20",
             pdf: null
-        }
+        },
         
         {
     companyCode: "100001",
