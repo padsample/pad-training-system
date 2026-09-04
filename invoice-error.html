@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ログインエラー | 請求書受領管理システム</title>
+
+    <link rel="stylesheet"
+          href="css/invoice-style.css">
+
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-container">
+
+            <!-- システム情報 -->
+            <div class="system-area">
+
+                <div class="system-icon">
+                    📄
+                </div>
+
+                <h1>
+                    請求書受領管理システム
+                </h1>
+
+                <p class="system-name">
+                    Invoice Receipt Management System
+                </p>
+
+                <p class="system-description">
+                    受領した請求書の検索・確認を行うための業務システムです。
+                </p>
+
+            </div>
+
+
+            <!-- エラー表示 -->
+            <div class="login-area">
+
+                <div class="login-header">
+
+                    <h2>
+                        ログインエラー
+                    </h2>
+
+                    <p id="lblErrorMessage">
+                        ログインに失敗しました。
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="btnBack"
+                    class="login-button"
+                    type="button"
+                    onclick="location.href='invoice-login.html'">
+
+                    ログイン画面へ戻る
+
+                </button>
+
+
+                <div class="system-info">
+
+                    <div>
+                        Version 1.0
+                    </div>
+
+                    <div>
+                        PAD Training Environment
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        // URLパラメーター取得
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const errorType =
+            params.get("type");
+
+        const errorMessage =
+            document.getElementById("lblErrorMessage");
+
+
+        // 守秘義務チェックなし
+        if (errorType === "confidentiality") {
+
+            errorMessage.textContent =
+                "守秘義務に同意してください。";
+
+        }
+
+        // ログイン情報が不正
+        else if (errorType === "login") {
+
+            errorMessage.textContent =
+                "ログインIDまたはパスワードが正しくありません。";
+
+        }
+
+        // その他
+        else {
+
+            errorMessage.textContent =
+                "ログインに失敗しました。入力内容を確認してください。";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

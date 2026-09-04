@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>請求書受領管理システム | ログイン</title>
+
+    <link rel="stylesheet"
+          href="css/invoice-style.css">
+
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-container">
+
+            <!-- システム情報 -->
+            <div class="system-area">
+
+                <div class="system-icon">
+                    📄
+                </div>
+
+                <h1>
+                    請求書受領管理システム
+                </h1>
+
+                <p class="system-name">
+                    Invoice Receipt Management System
+                </p>
+
+                <p class="system-description">
+                    受領した請求書の検索・確認を行うための業務システムです。
+                </p>
+
+            </div>
+
+
+            <!-- ログインフォーム -->
+            <div class="login-area">
+
+                <div class="login-header">
+
+                    <h2>
+                        ログイン
+                    </h2>
+
+                    <p>
+                        ログイン情報を入力してください。
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="txtLoginId">
+                            ログインID
+                        </label>
+
+                        <input
+                            id="txtLoginId"
+                            type="text"
+                            autocomplete="off"
+                            placeholder="ログインIDを入力してください">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="txtPassword">
+                            パスワード
+                        </label>
+
+                        <input
+                            id="txtPassword"
+                            type="password"
+                            placeholder="パスワードを入力してください">
+
+                    </div>
+
+
+                    <div class="checkbox-group">
+
+                        <label>
+
+                            <input
+                                id="chkConfidentiality"
+                                type="checkbox">
+
+                            守秘義務に同意します
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        id="btnLogin"
+                        class="login-button"
+                        type="submit">
+
+                        ログイン
+
+                    </button>
+
+                </form>
+
+
+                <div class="system-info">
+
+                    <div>
+                        Version 1.0
+                    </div>
+
+                    <div>
+                        PAD Training Environment
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/invoice-login.js"></script>
+
+</body>
+
+</html>
