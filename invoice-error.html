@@ -91,42 +91,29 @@
 
     <script>
 
-        // URLパラメーター取得
-        const params =
-            new URLSearchParams(window.location.search);
+    const errorMessage =
+        document.getElementById("lblErrorMessage");
 
-        const errorType =
-            params.get("type");
-
-        const errorMessage =
-            document.getElementById("lblErrorMessage");
+    const message =
+        sessionStorage.getItem("loginError");
 
 
-        // 守秘義務チェックなし
-        if (errorType === "confidentiality") {
+    if (message) {
 
-            errorMessage.textContent =
-                "守秘義務に同意してください。";
+        errorMessage.textContent = message;
 
-        }
+        // 使用後は削除
+        sessionStorage.removeItem("loginError");
 
-        // ログイン情報が不正
-        else if (errorType === "login") {
+    }
+    else {
 
-            errorMessage.textContent =
-                "ログインIDまたはパスワードが正しくありません。";
+        errorMessage.textContent =
+            "ログインに失敗しました。入力内容を確認してください。";
 
-        }
+    }
 
-        // その他
-        else {
-
-            errorMessage.textContent =
-                "ログインに失敗しました。入力内容を確認してください。";
-
-        }
-
-    </script>
+</script>
 
 </body>
 
