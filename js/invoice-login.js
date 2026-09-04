@@ -32,8 +32,13 @@ loginForm.addEventListener("submit", function (event) {
 
     if (loginId !== "0000" || password !== "0000") {
 
+        sessionStorage.setItem(
+            "loginError",
+            "ログインIDまたはパスワードが正しくありません。"
+        );
+
         window.location.href =
-            "invoice-error.html?type=login";
+            "invoice-error.html";
 
         return;
     }
@@ -45,8 +50,13 @@ loginForm.addEventListener("submit", function (event) {
 
     if (!confidentiality) {
 
+        sessionStorage.setItem(
+            "loginError",
+            "守秘義務に同意してください。"
+        );
+
         window.location.href =
-            "invoice-error.html?type=confidentiality";
+            "invoice-error.html";
 
         return;
     }
