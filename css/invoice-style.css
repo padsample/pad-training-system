@@ -36,9 +36,6 @@ body {
     box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
 }
 
-
-/* 左側：システム情報 */
-
 .system-area {
     position: relative;
     display: flex;
@@ -75,17 +72,13 @@ body {
 .system-icon {
     width: 72px;
     height: 72px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 32px;
-
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 18px;
-
     font-size: 34px;
 }
 
@@ -109,9 +102,6 @@ body {
     color: #dbeafe;
 }
 
-
-/* 右側：ログイン */
-
 .login-area {
     display: flex;
     flex-direction: column;
@@ -134,9 +124,6 @@ body {
     font-size: 14px;
 }
 
-
-/* 入力欄 */
-
 .input-group {
     margin-bottom: 24px;
 }
@@ -153,15 +140,11 @@ body {
     width: 100%;
     height: 50px;
     padding: 0 15px;
-
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-
     background: #f8fafc;
-
     font-size: 15px;
     color: #0f172a;
-
     outline: none;
     transition: 0.2s;
 }
@@ -180,9 +163,6 @@ body {
     box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.12);
 }
 
-
-/* チェックボックス */
-
 .checkbox-group {
     margin: 5px 0 28px;
 }
@@ -191,10 +171,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-
     font-size: 14px;
     color: #475569;
-
     cursor: pointer;
 }
 
@@ -205,22 +183,15 @@ body {
     cursor: pointer;
 }
 
-
-/* ログインボタン */
-
 .login-button {
     width: 100%;
     height: 52px;
-
     border: none;
     border-radius: 8px;
-
     background: #0f766e;
     color: #ffffff;
-
     font-size: 16px;
     font-weight: 700;
-
     cursor: pointer;
     transition: 0.2s;
 }
@@ -236,42 +207,371 @@ body {
     box-shadow: none;
 }
 
-
-/* システム情報 */
-
 .system-info {
     margin-top: 35px;
     padding-top: 22px;
-
     border-top: 1px solid #e2e8f0;
-
     display: flex;
     justify-content: space-between;
-
     color: #94a3b8;
     font-size: 12px;
 }
 
 
-/* 画面幅が狭い場合 */
+/* 検索画面 */
 
-@media (max-width: 850px) {
+.search-body {
+    background: #f3f6f8;
+}
 
-    .login-page {
-        padding: 20px;
-    }
+.top-header {
+    min-height: 76px;
+    padding: 14px 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: #0b2239;
+    color: #ffffff;
+    border-bottom: 4px solid #0f766e;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 23px;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-subtitle {
+    margin-top: 3px;
+    color: #a7c7d8;
+    font-size: 11px;
+    letter-spacing: 0.7px;
+}
+
+.header-user {
+    color: #d5e4ec;
+    font-size: 13px;
+}
+
+.search-page {
+    width: min(1180px, calc(100% - 48px));
+    margin: 34px auto 60px;
+}
+
+.search-card,
+.result-card {
+    background: #ffffff;
+    border: 1px solid #dde5ea;
+    border-radius: 14px;
+}
+
+.search-card {
+    padding: 30px 34px 24px;
+    margin-bottom: 24px;
+}
+
+.result-card {
+    padding: 28px 34px 34px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.section-label {
+    margin-bottom: 5px;
+    color: #0f766e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h1,
+.result-header h2 {
+    color: #12263a;
+}
+
+.section-heading h1 {
+    font-size: 25px;
+}
+
+.section-description {
+    color: #687887;
+    font-size: 13px;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns:
+        minmax(360px, 1.4fr)
+        minmax(220px, 0.8fr)
+        118px;
+    align-items: end;
+    gap: 20px;
+}
+
+.search-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: #34495e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-range select,
+.company-field input {
+    height: 46px;
+    border: 1px solid #cbd5df;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #1d2d3d;
+    font-size: 14px;
+    outline: none;
+}
+
+.date-range select {
+    flex: 1;
+    min-width: 0;
+    padding: 0 34px 0 12px;
+    font-weight: 600;
+}
+
+.company-field input {
+    width: 100%;
+    padding: 0 13px;
+}
+
+.date-range select:focus,
+.company-field input:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+.date-separator {
+    color: #64748b;
+    font-weight: 700;
+}
+
+.search-button {
+    height: 46px;
+    border: none;
+    border-radius: 7px;
+    background: #0f766e;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-button:hover {
+    background: #115e59;
+}
+
+.search-button:active {
+    transform: translateY(1px);
+}
+
+.search-note {
+    margin-top: 17px;
+    color: #7a8996;
+    font-size: 12px;
+}
+
+
+/* 検索結果 */
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e4eaee;
+}
+
+.result-header h2 {
+    font-size: 21px;
+}
+
+.result-count {
+    color: #5f7180;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.company-info {
+    margin-top: 18px;
+    padding: 11px 14px;
+    border-left: 4px solid #0f766e;
+    background: #f2f8f7;
+    color: #334b50;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.message-area {
+    min-height: 0;
+    margin-top: 14px;
+    color: #b42318;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#tblResult {
+    width: 100%;
+    min-width: 950px;
+    margin-top: 18px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+#tblResult th {
+    padding: 12px 13px;
+    background: #eaf0f3;
+    border-top: 1px solid #d5dfe5;
+    border-bottom: 1px solid #cbd7dd;
+    color: #2d4153;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#tblResult td {
+    padding: 13px;
+    border-bottom: 1px solid #e4eaee;
+    color: #34495e;
+    text-align: center;
+}
+
+#tblResult tbody tr:hover {
+    background: #f8fbfc;
+}
+
+#tblResult .subject-cell {
+    text-align: left;
+}
+
+#tblResult .amount-cell {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* PDFファイル名リンク */
+
+.pdf-link {
+    color: #0f766e;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.pdf-link:hover {
+    color: #115e59;
+    text-decoration: none;
+}
+
+
+/* レスポンシブ */
+
+@media (max-width: 900px) {
 
     .login-container {
         width: 100%;
         grid-template-columns: 1fr;
     }
 
-    .system-area {
+    .system-area,
+    .login-area {
         padding: 45px;
     }
 
-    .login-area {
-        padding: 45px;
+    .top-header {
+        padding: 14px 22px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-page {
+        width: min(calc(100% - 28px), 1180px);
+        margin-top: 20px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .date-field,
+    .company-field,
+    .search-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .login-page {
+        padding: 20px;
+    }
+
+    .date-range {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .date-separator {
+        text-align: center;
+    }
+
+    .search-card,
+    .result-card {
+        padding: 22px 18px;
     }
 
 }
