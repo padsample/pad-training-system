@@ -206,7 +206,10 @@ function createTable(result) {
     "<td>" + row.documentName + "</td>" +
     "<td>" + createStatusBadge(row.status) + "</td>" +
     "<td>" + row.publishDate + "</td>" +
-    "<td>" + createPdfButton(row.pdf) + "</td>";
+    "<td>" + createPdfButton(
+        row.pdf,
+        row.companyCode + "_" + row.documentNo + "_" + row.documentName + ".pdf"
+    ) + "</td>";
 
         tbodyResult.appendChild(tr);
 
@@ -234,7 +237,7 @@ function createStatusBadge(status) {
 // PDFボタン生成
 //======================================================
 
-function createPdfButton(pdf) {
+function createPdfButton(pdf, displayFileName) {
 
     // 公開
     if (pdf) {
@@ -243,9 +246,11 @@ function createPdfButton(pdf) {
 <a
     href="pdf/${pdf}"
     class="download-button"
-    target="_blank">
+    target="_blank"
+    aria-label="ダウンロード"
+    data-file="${displayFileName}">
 
-    📄 ダウンロード
+    <span class="legacy-download-label">📄 ダウンロード</span>
 
 </a>
 `;
@@ -256,9 +261,11 @@ function createPdfButton(pdf) {
     return `
 <a
     href="#"
-    class="download-button disabled">
+    class="download-button disabled"
+    aria-label="ダウンロード"
+    data-file="${displayFileName}">
 
-    📄 ダウンロード
+    <span class="legacy-download-label">📄 ダウンロード</span>
 
 </a>
 `;
