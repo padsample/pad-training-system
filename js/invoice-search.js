@@ -365,9 +365,6 @@ function searchInvoice() {
     clearResult();
 
 
-    // 検索ボタンを押した後に
-    // 検索結果エリアを表示する。
-
     resultCard.style.display =
         "block";
 
@@ -377,10 +374,6 @@ function searchInvoice() {
     // --------------------------------------------------
 
     if (companyCode === "") {
-
-        lblResultCount.textContent =
-            "0件";
-
 
         divMessage.textContent =
             "取引先コードを入力してください。";
@@ -402,12 +395,8 @@ function searchInvoice() {
         )
     ) {
 
-        lblResultCount.textContent =
-            "0件";
-
-
         divMessage.textContent =
-            "該当する取引先はありません。";
+            "指定した条件に該当する請求書はありません。";
 
 
         return;
@@ -433,10 +422,6 @@ function searchInvoice() {
 
     if (fromDate > toDate) {
 
-        lblResultCount.textContent =
-            "0件";
-
-
         divMessage.textContent =
             "受領期間の開始日が終了日より後になっています。";
 
@@ -444,21 +429,6 @@ function searchInvoice() {
         return;
 
     }
-
-
-    // --------------------------------------------------
-    // 取引先情報表示
-    // --------------------------------------------------
-
-    divCompanyInfo.style.display =
-        "block";
-
-
-    divCompanyInfo.textContent =
-        "取引先："
-        + companyCode
-        + "　"
-        + companyData[companyCode];
 
 
     const source =
@@ -493,12 +463,8 @@ function searchInvoice() {
             );
 
 
-    lblResultCount.textContent =
-        result.length + "件";
-
-
     // --------------------------------------------------
-    // 0件
+    // 検索結果0件
     // --------------------------------------------------
 
     if (result.length === 0) {
@@ -513,8 +479,23 @@ function searchInvoice() {
 
 
     // --------------------------------------------------
-    // 1件以上
+    // 検索結果がある場合のみ取引先情報・件数を表示
     // --------------------------------------------------
+
+    divCompanyInfo.style.display =
+        "block";
+
+
+    divCompanyInfo.textContent =
+        "取引先："
+        + companyCode
+        + "　"
+        + companyData[companyCode];
+
+
+    lblResultCount.textContent =
+        result.length + "件";
+
 
     tableWrapper.style.display =
         "block";
