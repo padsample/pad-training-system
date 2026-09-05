@@ -279,3 +279,56 @@ function createPdfButton(pdf, displayFileName) {
 lblResultCount.textContent = "検索してください。";
 
 divMessage.textContent = "";
+
+//======================================================
+// 画像認識練習用キャンバス
+//======================================================
+
+const cnvImageTarget =
+    document.getElementById("cnvImageTarget");
+
+if (cnvImageTarget) {
+
+    const ctx = cnvImageTarget.getContext("2d");
+
+    // 背景
+    const gradient = ctx.createLinearGradient(0, 0, 360, 120);
+    gradient.addColorStop(0, "#0f4c81");
+    gradient.addColorStop(1, "#1368aa");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 360, 120);
+
+    // 左側アイコン背景
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath();
+    ctx.roundRect(18, 18, 86, 84, 10);
+    ctx.fill();
+
+    // 虫眼鏡アイコン
+    ctx.strokeStyle = "#0f72c8";
+    ctx.lineWidth = 7;
+    ctx.beginPath();
+    ctx.arc(61, 54, 23, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(78, 71);
+    ctx.lineTo(95, 89);
+    ctx.stroke();
+
+    // 右側ラベル背景
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath();
+    ctx.roundRect(128, 34, 205, 54, 9);
+    ctx.fill();
+
+    // 文字
+    ctx.fillStyle = "#153b63";
+    ctx.font = "bold 18px 'Yu Gothic UI', sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("画像認識サンプル", 230, 60);
+
+    ctx.fillStyle = "#6f7b87";
+    ctx.font = "12px 'Segoe UI', sans-serif";
+    ctx.fillText("PAD Image Target", 230, 78);
+
+}
