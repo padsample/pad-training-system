@@ -2,32 +2,211 @@
 <html lang="ja">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>請求書受領管理システム</title>
+    <title>請求書検索 | 請求書受領管理システム</title>
 
     <link rel="stylesheet"
           href="css/invoice-style.css">
-
 </head>
 
-<body>
+<body class="search-body">
 
-    <main>
+    <header class="top-header">
 
-        <h1>
-            請求書受領管理システム
-        </h1>
+        <div class="header-brand">
 
-        <p>
-            ログインしました。
-        </p>
+            <div class="header-icon">
+                📄
+            </div>
+
+            <div>
+
+                <div class="header-title">
+                    請求書受領管理システム
+                </div>
+
+                <div class="header-subtitle">
+                    Invoice Receipt Management System
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="header-user">
+            ログインユーザー：0000
+        </div>
+
+    </header>
+
+
+    <main class="search-page">
+
+        <section class="search-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        INVOICE SEARCH
+                    </p>
+
+                    <h1>
+                        請求書検索
+                    </h1>
+
+                </div>
+
+                <p class="section-description">
+                    受領期間と取引先コードを指定して請求書を検索します。
+                </p>
+
+            </div>
+
+
+            <div class="search-form">
+
+                <div class="search-field date-field">
+
+                    <label for="ddlReceiptDateFrom">
+                        受領期間
+                    </label>
+
+                    <div class="date-range">
+
+                        <select id="ddlReceiptDateFrom">
+                        </select>
+
+                        <span class="date-separator">
+                            ～
+                        </span>
+
+                        <select id="ddlReceiptDateTo">
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-field company-field">
+
+                    <label for="txtCompanyCode">
+                        取引先コード
+                    </label>
+
+                    <input
+                        id="txtCompanyCode"
+                        type="text"
+                        autocomplete="off">
+
+                </div>
+
+
+                <button
+                    id="btnSearch"
+                    class="search-button"
+                    type="button">
+
+                    検索
+
+                </button>
+
+            </div>
+
+
+            <p class="search-note">
+                受領期間には、本日から30日前までの日付を指定できます。
+            </p>
+
+        </section>
+
+
+        <section
+            id="resultCard"
+            class="result-card"
+            style="display:none;">
+
+            <div class="result-header">
+
+                <div>
+
+                    <p class="section-label">
+                        SEARCH RESULT
+                    </p>
+
+                    <h2>
+                        検索結果
+                    </h2>
+
+                </div>
+
+                <div
+                    id="lblResultCount"
+                    class="result-count">
+                </div>
+
+            </div>
+
+
+            <div
+                id="divCompanyInfo"
+                class="company-info"
+                style="display:none;">
+            </div>
+
+
+            <div
+                id="divMessage"
+                class="message-area">
+            </div>
+
+
+            <div
+                id="tableWrapper"
+                class="table-wrapper"
+                style="display:none;">
+
+                <table id="tblResult">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>受領日時</th>
+
+                            <th>請求書番号</th>
+
+                            <th>請求内容</th>
+
+                            <th>請求金額</th>
+
+                            <th>支払期限</th>
+
+                            <th>表題</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tbodyResult">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
 
     </main>
+
+
+    <script src="js/invoice-search.js"></script>
 
 </body>
 
